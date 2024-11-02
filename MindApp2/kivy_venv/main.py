@@ -157,7 +157,7 @@ class ChatScreen(Screen):
        instructions = "You are a therapist and the user is having a session with you.\
        Also, if someone is stressed about a workload, suggest the To-Do list feature in the Gestalt app(which you are an element of. \
        Give more advice rather than asking questions, although questions are ok. \
-       Try to make your responses concise and don't use lists unless absolutely neccesary."
+       Try to make your responses concise and don't use lists unless absolutely neccesary. Also, make sure you help the patiend to cognitively reframe things stressing them out. analyze their behaviors such that you can help them to rethink the way they think. The goal is to help them for long periods of time, not just short term relief.  "
 
        messages = [{"role": "system", "content": instructions}]
        messages.extend(chat_history)  # Include user and assistant messages
@@ -471,7 +471,7 @@ class DashboardScreen(Screen):
 
    def load_and_switch_to_chat(self):
        chat_screen = self.manager.get_screen('chat')
-       popup = Popup(title='Dislaimer', content=Label(text='This app is not meant to \nsubstitute medical advice.'),
+       popup = Popup(title='Disclaimer', content=Label(text='This app is not meant to \nsubstitute medical advice.'),
                      size_hint=(None, None), size=(200, 200))
        popup.open()
 
